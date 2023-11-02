@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS posts (
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
-INSERT INTO users (name, email, password) VALUES ('John Doe', 'john.doe@email.com', "password");
+-- INSERT INTO users (name, email, password) VALUES ('John Doe', 'john.doe@email.com', "password");
 
-SELECT * FROM users;
+-- SELECT * FROM users;
