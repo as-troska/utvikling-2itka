@@ -15,6 +15,11 @@ app.listen(3000, () => {
 
 async function getUsers(request, response) {
 
+    const baseURL = "https://randomuser.me/api/?"
+    const url = baseURL + new URLSearchParams(request.query);
+    console.log(url)
+
+
     if (!request.query.results) {
         request.query.results = 10;
     }
@@ -22,9 +27,7 @@ async function getUsers(request, response) {
     if (!request.query.nat) {
         request.query.nat = "no";
     }
-    const baseURL = "https://randomuser.me/api/?"
-    const url = baseURL + new URLSearchParams(request.query);
-    console.log(url)
+
 
     const fetch_response = await fetch(url);
     const json = await fetch_response.json();
@@ -36,3 +39,9 @@ async function getUsers(request, response) {
 }
 
 app.get("/users", getUsers);
+
+
+
+
+
+

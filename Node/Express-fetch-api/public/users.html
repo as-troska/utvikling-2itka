@@ -10,7 +10,7 @@
 
     <script>
         async function getUsers() {
-            let response = await fetch('/users?results=100');
+            let response = await fetch('/users');
             let users = await response.json();
             console.log(users[0])
             
